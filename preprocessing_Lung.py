@@ -12,7 +12,7 @@ from pylidc.utils import consensus
 scans = pl.query(pl.Scan)
 print("total scans in Database: " + str(scans.count()))
 
-for subjectID in range(237,scans.count()):
+for subjectID in range(848,scans.count()): #this should be 1, scans.count()
     s = 'LIDC-IDRI-%04i' % subjectID
     scans = pl.query(pl.Scan).filter(pl.Scan.patient_id == s).first()
     if scans:
@@ -25,15 +25,13 @@ for subjectID in range(237,scans.count()):
             i+1
 
             savefile = str(pathlib.Path().absolute()) + r"\database"
-            print(savefile)
-
 
             if (nods[i][int(len(nods[i])/2)].malignancy == 5):
                 print("cancerous")
                 savefile = savefile + r"\cancerous"
 
             if (nods[i][int(len(nods[i])/2)].malignancy == 4):
-                print("\\likely cancerous")
+                print("likely cancerous")
                 savefile = savefile + r"\likely cancerous"
 
             if (nods[i][int(len(nods[i])/2)].malignancy == 3):

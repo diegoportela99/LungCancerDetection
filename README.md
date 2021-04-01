@@ -1,0 +1,8 @@
+# LungCancerDetection
+pre-processing and lung cancer detection
+
+Pre processing features - not used in project just useful functions for reference
+
+preprocessing_lung - creates the database files for CNN
+
+input_dcm_read - used to open DCM file and converts it to image for testing CNN
